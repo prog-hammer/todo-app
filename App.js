@@ -8,7 +8,13 @@ export default function App() {
     {text:'mfdkmdkm',key:'1'},
     {text:'mfdkmdkm',key:'2'},
     {text:'mfdkmdkm',key:'3'},
-  ])
+  ]);
+
+  const pressHandler=(key)=>{
+    setTodos(prevTodos=>{
+      return prevTodos.filter(todo=>todo.key!=key);
+    })
+  }
 
   return (
     <View style={styles.container}>
@@ -17,7 +23,7 @@ export default function App() {
       <FlatList
         data={todos}
         renderItem={({ item }) => (
-          <Todo item={item}></Todo>
+          <Todo item={item} pressHandler={pressHandler}></Todo>
         )}
       />
       </View>

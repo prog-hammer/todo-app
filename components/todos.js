@@ -1,11 +1,13 @@
 import React,{useState} from 'react';
-import {StyleSheet, Text, View, ToolbarAndroid} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
-export default function Todo({item}){
+export default function Todo({item,pressHandler}){
     return(
-        <View>
-            <Text style={styles.item}>{item.text}</Text>
-        </View>
+        <TouchableOpacity onPress={()=>pressHandler(item.key)}>
+            <View>
+                <Text style={styles.item}>{item.text}</Text>
+            </View>
+        </TouchableOpacity>
     )
 };
 
