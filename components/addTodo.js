@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import {View,Text,StyleSheet, TextInput, Button} from 'react-native';
 
 export default function AddTodo({submitHandler}){
-    const [text,setText]=useState('');
+    [text,setText]=useState('');
 
     const changeHandler=(val)=>{
         setText(val);
